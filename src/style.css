@@ -1,0 +1,163 @@
+html *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.mama{
+    height: 1000px;
+}
+
+header{
+    display: flex;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100vw;
+    padding: 0 1rem;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 25vh;
+    background-color: rgba(0, 0, 0, 0.300);
+}
+
+header .containerLogo{
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    width: 5rem;
+    margin-right: 4rem;
+}
+
+header .navegation{
+    display: flex;
+    align-items: center;
+}
+
+header .navegation ul{
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+header .navegation ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.3em;
+}
+
+header .navegation ul li:hover a{
+    color: blue;
+}
+
+.user{
+    display: flex;
+    width: 15vw;
+    margin-right: 1rem;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.button{
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.userImg{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.arrow{
+    position: absolute;
+    right: 0vw;
+    margin-top: .4rem;
+    margin-right: 3.1rem;
+    width: 20px;
+    opacity: 0;
+    transition: .7s;
+}
+
+.arrow.show{
+    opacity: 1;
+}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    width: 10vh;
+    margin-right: 1.7rem;
+    height: 6rem;
+    justify-content: space-evenly;
+    background-color: #282828;
+    border-radius: 10px;
+    opacity: 1;
+
+    position: absolute;
+    /* top: -100vh; */
+    top: 15vh;
+    right: 0vw;
+    opacity: 0;
+    transition: .7s;
+}
+
+.profile.show{
+    opacity: 1;
+}
+
+.profile a{
+    color: white;
+    text-align: center;
+    text-decoration:  none;
+}
+
+.profile a:hover{
+    background-color: brown;
+}
+
+/* ------HERO------- */
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    background-image: url(./img/fondoDia.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+
+@media (max-width: 676px){
+
+    .logo{
+        width: 3.8rem;
+        margin-right: 1rem;
+    }
+    .user{
+        margin-right: 0rem;
+    }
+    .arrow{
+        margin-top: .3rem;
+        margin-right: 1.7rem;
+    }
+    .profile{
+        top: 11vh;
+        margin-right: .15rem;
+    }
+    .userImg{
+        width: 45px;
+        height: 45px;
+    }
+}
+
+
