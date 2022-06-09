@@ -100,7 +100,6 @@ header .navegation ul li:hover a{
     opacity: 1;
 
     position: absolute;
-    /* top: -100vh; */
     top: 15vh;
     right: 0vw;
     opacity: 0;
@@ -124,7 +123,7 @@ header .navegation ul li:hover a{
 /* ------HERO------- */
 
 .hero{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-image: url(./img/fondoDia.jpg);
     background-size: cover;
@@ -132,10 +131,82 @@ header .navegation ul li:hover a{
     background-repeat: no-repeat;
 
     display: flex;
-    align-items: center;
     color: white;
 }
 
+.containHero{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 0 2rem;
+    padding-top: 30vh;
+}
+
+.containHero h2{
+    font-size: calc(.5em + 4vw);
+}
+
+.containLetter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 37%;
+    max-height: 35vh;
+    padding: 1rem 3%;
+    border-radius: 14px;
+    background-color: #0000006e;
+}
+
+.containLetter p{
+    font-size: calc(.5rem + 1vw);
+    text-align: center;
+}
+
+.containButton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 37%;
+    max-height: 35vh;
+    padding: 1rem .5rem;
+    border-radius: 14px;
+    background-color: #0000006e;
+}
+
+.containButton p{
+    text-align: center;
+    font-size: calc(1.1em + .5vw);
+}
+
+.buttonEdifice{
+    background-color: rgba(255, 255, 255, 0.425);
+    border: none;
+    border-radius: 10px;
+    width: 8rem;
+    height: 9rem;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.9em;
+}
+
+.buttonEdifice img{
+    width: 5rem;
+    height: 6rem;
+}
+
+.buttonEdifice:hover{
+    transform: scale(1.05);
+}
+
+@media (max-width: 767px){
+    .containLetter, .containButton{
+        width: 44%;
+    }
+
+
+}
 
 @media (max-width: 676px){
 
@@ -158,6 +229,28 @@ header .navegation ul li:hover a{
         width: 45px;
         height: 45px;
     }
+
+
+    .containHero{
+        padding-top: 20vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+
+    .containLetter, .containButton{
+        width: 100%;
+    }
+
+    .containHero h2{
+        font-size: calc(.5em + 10vw);
+    }
+
+    .containLetter p{
+        font-size: calc(.5rem + 3vw);
+    }
+
 }
 
 

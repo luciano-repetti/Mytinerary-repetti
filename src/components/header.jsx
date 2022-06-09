@@ -1,8 +1,15 @@
-import React from "react";
+import React,{useState} from "react";
 
 
 
 function Header() {
+  const [menu, setMenu] = useState(false)
+  const [arrow, setArrow] = useState(false)
+  function handleToggleMenu(){
+    setMenu(!menu)
+    setArrow(!arrow)
+  }
+
   return (
     <>
       <header>
@@ -16,26 +23,16 @@ function Header() {
           </nav>
         </div>
         <div className="user">
-          <button className="button" onClick={()=>{
-            let menu = document.getElementById("menuProfile");
-            let arrow = document.getElementById("arrow");
-            if(menu.classList == "profile"){
-              arrow.classList.add("show")
-              menu.classList.add("show");
-            }else{
-              arrow.classList.remove("show")
-              menu.classList.remove("show")
-            }
-          }}>
+          <button className="button" onClick={handleToggleMenu}>
             <img className="userImg" src={require("../img/user.png")} alt="" />
           </button>
           <div>
-            <img id="arrow" className="arrow" src={require("../img/arrow.png")} alt="" />
+            <img id="arrow" className={arrow ? "arrow show" : "arrow"} src={require("../img/arrow.png")} alt="" />
           </div>
-          <div id="menuProfile" className="profile">
-            <a href="">Sign Up</a>
-            <a href="">Sign In</a>
-          </div>
+            <div id="menuProfile" className={menu ? "profile show" : "profile"}>
+              <a href="">Sign Up</a>
+              <a href="">Sign In</a>
+            </div>
         </div>
       </header>
     </>
