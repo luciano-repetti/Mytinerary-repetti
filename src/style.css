@@ -15,7 +15,7 @@ header{
     top: 0;
     left: 0;
     z-index: 2;
-    width: 100vw;
+    width: 100%;
     padding: 0 1rem;
     justify-content: space-between;
     align-items: center;
@@ -123,7 +123,7 @@ header .navegation ul li:hover a{
 /* ------HERO------- */
 
 .hero{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-image: url(./img/fondoDia.jpg);
     background-size: cover;
@@ -200,9 +200,74 @@ header .navegation ul li:hover a{
     transform: scale(1.05);
 }
 
+
+
+/* --------Slider-------- */
+
+.slider{
+    height: 80vh;
+}
+
+.parent {
+    display: grid;
+    grid-gap: 1rem;
+    padding: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.div{ 
+    padding: 0 0.5rem;
+}
+.div p{
+    text-align: center;
+}
+.div img{
+    border-radius: 10px;
+    height: 17rem;
+}
+
+.carousel-control-next-icon{
+    background-image: url(https://icones.pro/wp-content/uploads/2021/06/icone-fleche-droite-noir.png) !important;
+    width: 3rem !important;
+    height: 3rem !important;
+}
+
+.carousel-control-prev-icon{
+    background-image: url(https://icones.pro/wp-content/uploads/2021/06/icone-fleche-gauche-noir.png) !important;
+    width: 3rem !important;
+    height: 3rem !important;
+}
+
+.carousel-control-next, .carousel-control-prev{
+    padding-bottom: 2rem !important;
+    width: 5% !important;
+    opacity: 1 !important;
+}
+
 @media (max-width: 767px){
     .containLetter, .containButton{
         width: 44%;
+    }
+
+    .div img{
+        border-radius: 10px;
+        height: 14rem;
+    }
+
+
+}
+
+@media (max-width: 690px){
+    .slider{
+        height: 60vh;
+    }
+    
+    .div img{
+        border-radius: 10px;
+        height: 10rem;
     }
 
 
@@ -249,6 +314,20 @@ header .navegation ul li:hover a{
 
     .containLetter p{
         font-size: calc(.5rem + 3vw);
+    }
+
+    .slider{
+        height: 40vh;
+    }
+    
+    .div img{
+        border-radius: 10px;
+        height: 7rem;
+    }
+
+    .carousel-control-next, .carousel-control-prev{
+        width: 10% !important;
+        opacity: 1;
     }
 
 }
