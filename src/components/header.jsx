@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import {Link as LinkRouter} from "react-router-dom"
 
 
 
@@ -17,8 +18,8 @@ function Header() {
           <img className="logo" src={require("../img/logo.png")} alt="" />
           <nav className="navegation">
             <ul>
-              <li><a href="">Home</a></li>
-              <li><a href="">Cities</a></li>
+              <li><LinkRouter to={'./'}>Home</LinkRouter></li>
+              <li><LinkRouter to={'./Cities'}>Cities</LinkRouter></li>
             </ul>
           </nav>
         </div>

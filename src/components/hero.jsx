@@ -1,4 +1,5 @@
 import React from "react";
+import {Link as LinkRouter} from 'react-router-dom'
 
 
 
@@ -17,7 +18,7 @@ function Hero() {
         </div>
         <div className="containButton">
           <p>Press the button to go to cities</p>
-          <button className="buttonEdifice"><img src={require("../img/edificios.png")} alt="" />Cities</button>
+          <LinkRouter to={'./Cities'} className="buttonEdifice"><img src={require("../img/edificios.png")} alt="" />Cities</LinkRouter>
         </div>
       </div>
     </div>
