@@ -9,14 +9,14 @@ import Cities from './pages/Cities'
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header />
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/cities" element={<Cities />} />
       </Routes>
       <Footer />
-    </div>
+    </>
   );
 }
 
