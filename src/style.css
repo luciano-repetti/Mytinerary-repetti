@@ -4,12 +4,36 @@ html *{
     box-sizing: border-box ;
 }
 
+body{
+    background-image: url(./img/fondoDia.jpg);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 a:hover{
     color: white !important;
 }
 
-.mama{
-    height: 1000px;
+.buttonToUp{
+    position: fixed;
+    z-index: 99;
+    top: 80vh;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: none;
+}
+
+.buttonToUp img{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 header{
@@ -87,11 +111,14 @@ header .navegation ul li:hover{
     margin-top: .4rem;
     margin-right: 3.1rem;
     width: 20px;
+
+    visibility: hidden;
     opacity: 0;
     transition: .7s;
 }
 
 .arrow.show{
+    visibility: visible;
     opacity: 1;
 }
 
@@ -104,7 +131,8 @@ header .navegation ul li:hover{
     justify-content: space-evenly;
     background-color: #282828;
     border-radius: 10px;
-    opacity: 1;
+    visibility: hidden;
+    opacity: 0;
 
     position: absolute;
     top: 15vh;
@@ -114,6 +142,7 @@ header .navegation ul li:hover{
 }
 
 .profile.show{
+    visibility: visible;
     opacity: 1;
 }
 
@@ -132,10 +161,11 @@ header .navegation ul li:hover{
 .hero{
     width: 100%;
     height: 100vh;
-    background-image: url(./img/fondoDia.jpg);
+    /* background-image: url(./img/fondoDia.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed; */
 
     display: flex;
     color: white;
@@ -213,41 +243,46 @@ header .navegation ul li:hover{
 
 /* --------Slider-------- */
 
-.slider{
-    height: 80vh;
-    margin-bottom: 10rem;
-}
-
 .parent {
+    width: 100%;
     display: grid;
-    grid-gap: 1rem;
     padding: 1rem;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    justify-items: center;
+    gap: 1rem;
+}
+.carousel-indicators{
+    margin-bottom: 0 !important;
+    bottom: -1.3rem !important;
+    padding: 1rem 0 !important;
 }
 
-.div{ 
-    padding: 0 0.5rem;
+.div{
+    width: 90%;
 }
 .div p{
+    color: #fff;
     text-align: center;
 }
 .div img{
+    object-fit: cover;
     border-radius: 10px;
-    height: 17rem;
+    height: 15rem;
+    border: 3px solid white;
 }
 
 .carousel-control-next-icon{
-    background-image: url(https://icones.pro/wp-content/uploads/2021/06/icone-fleche-droite-noir.png) !important;
-    width: 3rem !important;
+    background-image: url(./img/flechaRight.png) !important;
+    width: 2.5rem !important;
     height: 3rem !important;
 }
 
 .carousel-control-prev-icon{
-    background-image: url(https://icones.pro/wp-content/uploads/2021/06/icone-fleche-gauche-noir.png) !important;
-    width: 3rem !important;
+    background-image: url(./img/flechaLeft.png) !important;
+    width: 2.5rem !important;
     height: 3rem !important;
 }
 
@@ -255,6 +290,23 @@ header .navegation ul li:hover{
     padding-bottom: 2rem !important;
     width: 5% !important;
     opacity: 1 !important;
+}
+
+.carousel-control-prev{
+    left: 2rem !important;
+}
+
+.carousel-control-next{
+    right: 2rem !important;
+}
+
+.carousel.slide{
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.carousel-inner{
+    width: 80% !important;
 }
 
 /* -------MAIN------- */
@@ -283,8 +335,9 @@ main .building img{
 /* -----FOOTER------- */
 
 footer{
+    padding: 1rem 0;
     width: 100%;
-    height: 26vh;
+    height: 20vh;
     background-color: #3347ff;
     display: flex;
     flex-direction: column;
@@ -294,19 +347,7 @@ footer{
 }
 
 footer .navFooter{
-    display: flex;
-    gap: 2rem;
-    font-size: 1.8rem;
-}
-
-footer .navFooter a{
-    color: white;
-    text-decoration: none;
-}
-
-footer .navFooter > a:hover{
-    color: #33beff !important;
-    transform: scale(1.1);
+    display: none !important;
 }
 
 footer .social{
@@ -315,7 +356,7 @@ footer .social{
 }
 
 footer .social img{
-    width: 4rem;
+    width: 3rem;
 }
 
 footer .social img:hover{
@@ -347,9 +388,6 @@ footer .social img:hover{
 }
 
 @media (max-width: 690px){
-    .slider{
-        height: 60vh;
-    }
     
     .div img{
         border-radius: 10px;
@@ -402,8 +440,8 @@ footer .social img:hover{
         font-size: calc(.5rem + 3vw);
     }
 
-    .slider{
-        height: 40vh;
+    .div{
+        width: 100%;
     }
     
     .div img{
@@ -414,6 +452,14 @@ footer .social img:hover{
     .carousel-control-next, .carousel-control-prev{
         width: 10% !important;
         opacity: 1;
+    }
+    
+    .carousel-inner{
+        width: 100% !important;
+    }
+
+    .carousel-control-next, .carousel-control-prev{
+        display: none !important;
     }
 
 
