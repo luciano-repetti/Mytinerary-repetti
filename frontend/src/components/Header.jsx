@@ -19,7 +19,7 @@ function Header() {
           <nav className="navegation">
             <ul>
               <li><LinkRouter to={'./'}>Home</LinkRouter></li>
-              <li><LinkRouter to={'./Cities'}>Cities</LinkRouter></li>
+              <li><LinkRouter to={'./cities'}>Cities</LinkRouter></li>
             </ul>
           </nav>
         </div>

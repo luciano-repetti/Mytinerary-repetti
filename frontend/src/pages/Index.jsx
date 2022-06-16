@@ -82,10 +82,10 @@ const slider = [
 
 function Index() {
   return (
-    <>
+    <main className="mainIndex">
       <Hero />
       <Slider images={slider} />
-    </>
+    </main>
   );
 }
 

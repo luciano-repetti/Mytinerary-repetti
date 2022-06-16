@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import {Link as LinkRouter} from "react-router-dom"
 
 function Footer() {
   return (
     <footer>
       <div className="navFooter">
-        <LinkRouter to={'/'}>Home</LinkRouter>
-        <LinkRouter to={'./Cities'}>Cities</LinkRouter>
+        <div className="buttonNav">
+          <LinkRouter to={'/'}>Home</LinkRouter>
+        </div>
+        <div className="buttonNav">
+          <LinkRouter to={'./Cities'}>Cities</LinkRouter>
+        </div>
       </div>
       <div className="social">
           <a href="https://web.whatsapp.com/"><img src={require("../img/whatsapp.png")} alt="" /></a>
