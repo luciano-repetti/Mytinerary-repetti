@@ -1,18 +1,26 @@
 import "../style.css";
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { useParams, Link as LinkRouter } from "react-router-dom";
+import ScrollToTop from "../components/ScollToTop";
+
+import { useDispatch, useSelector } from 'react-redux'
+import citiesActions from '../redux/actions/citiesActions'
 
 function Detail() {
+  ScrollToTop()
   let { id } = useParams();
+  const dispatch = useDispatch()
 
-  const [city, setCity] = useState([]);
+  // const [city, setCity] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:4000/api/cities/" + id)
-      .then((response) => setCity(response.data.response.city));
+    // axios
+    //   .get("http://localhost:4000/api/cities/" + id)
+    //   .then((response) => setCity(response.data.response.city));
+    dispatch(citiesActions.getOneCity(id))
   }, []);
+
+  const city = useSelector(store => store.citiesReducer.city)
 
   return (
     <main className="mainCities">

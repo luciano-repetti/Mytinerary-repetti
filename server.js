@@ -3,7 +3,7 @@ require('./config/database')
 const express = require('express')
 const Router = require('./routes/routes')
 const cors = require('cors')
-const PORT = 4000;
+const PORT = process.env.SERVER_PORT;
 
 const app = express()
 

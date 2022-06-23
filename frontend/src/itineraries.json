@@ -1,0 +1,42 @@
+{
+    "data":[
+    {
+        "nameItinerary": "Cerro Catedral",
+        "city": "Bariloche",
+        "user":{
+            "nameUser": "luchitez3540",
+            "imgUser": "https://play-lh.googleusercontent.com/-XynJDGxK73M/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclBuzVUtiUeiYIUzQmqHn3M_kITvg/photo.jpg"
+        },
+        "price": 10,
+        "duration": 10,
+        "hashtags": ["Cerro Catedral", "Ski", "Snowboard"],
+        "likes": [0],
+        "activities": []
+    },
+    {
+        "nameItinerary": "Cerro Catedral",
+        "city": "Bariloche",
+        "user":{
+            "nameUser": "luchitez3540",
+            "imgUser": "https://play-lh.googleusercontent.com/-XynJDGxK73M/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclBuzVUtiUeiYIUzQmqHn3M_kITvg/photo.jpg"
+        },
+        "price": 10,
+        "duration": 10,
+        "hashtags": ["Cerro Catedral", "Ski", "Snowboard"],
+        "likes": [0],
+        "activities": []
+    },
+    {
+        "nameItinerary": "Cerro Catedral",
+        "city": "Bariloche",
+        "user":{
+            "nameUser": "luchitez3540",
+            "imgUser": "https://play-lh.googleusercontent.com/-XynJDGxK73M/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclBuzVUtiUeiYIUzQmqHn3M_kITvg/photo.jpg"
+        },
+        "price": 10,
+        "duration": 10,
+        "hashtags": ["Cerro Catedral", "Ski", "Snowboard"],
+        "likes": [0],
+        "activities": []
+    }]
+}

@@ -8,14 +8,13 @@ import Cities from './pages/Cities'
 import ScrollToUp from './components/ScrollToUp'
 import Detail from './pages/Detail'
 
-
 function App() {
   return (
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/cities" element={<Cities />} />
+        <Route path="/" element={<Index />}/>
+        <Route path="/cities" element={<Cities/>} />
         <Route path="/city/details/:id" element={<Detail />} />
       </Routes>
       <ScrollToUp />

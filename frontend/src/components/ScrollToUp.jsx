@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ScrollToTop from "./ScollToTop";
 
 const ScrollToUp = () =>{
   
@@ -14,21 +15,12 @@ const ScrollToUp = () =>{
       }
     };
     
-    const scrollToTop = () =>{
-      window.scrollTo({
-        top: 0, 
-        behavior: 'smooth'
-        /* you can also use 'auto' behaviour
-           in place of 'smooth' */
-      });
-    };
-    
     window.addEventListener('scroll', toggleVisible);
     
     return (
         <>
         {
-            visible ? <button className="buttonToUp" onClick={scrollToTop}><img src={require("../img/flechaUp.png")} alt="" /></button> : <></>
+            visible ? <button className="buttonToUp" onClick={ScrollToTop}><img src={require("../img/flechaUp.png")} alt="" /></button> : <></>
         }
         </>
     );

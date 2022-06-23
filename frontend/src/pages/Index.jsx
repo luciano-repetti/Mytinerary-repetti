@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "../components/Hero";
 import Slider from "../components/Slider";
+import ScrollToTop from "../components/ScollToTop";
 
 const slider = [
   {
@@ -81,6 +82,7 @@ const slider = [
 ];
 
 function Index() {
+  ScrollToTop()
   return (
     <main className="mainIndex">
       <Hero />
