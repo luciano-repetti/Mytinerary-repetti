@@ -5,6 +5,8 @@ import ScrollToTop from "../components/ScollToTop";
 
 import { useDispatch, useSelector } from 'react-redux'
 import citiesActions from '../redux/actions/citiesActions'
+import itinerariesActions from "../redux/actions/itinerariesActions";
+import Itinerary from "../components/Itinerary";
 
 function Detail() {
   ScrollToTop()
@@ -14,29 +16,23 @@ function Detail() {
   // const [city, setCity] = useState([]);
 
   useEffect(() => {
-    // axios
-    //   .get("http://localhost:4000/api/cities/" + id)
-    //   .then((response) => setCity(response.data.response.city));
     dispatch(citiesActions.getOneCity(id))
-  }, []);
+    dispatch(itinerariesActions.findTimFromCity(id))
+  }, [id]);
+
+ 
+
 
   const city = useSelector(store => store.citiesReducer.city)
+  const itineraries = useSelector(store => store.itinerariesReducer.itineraries)
+
+  console.log(itineraries)
+
 
   return (
     <main className="mainCities">
         <div className="linkBack"><LinkRouter to={'/cities'}><img src={require("../img/arrowBack.png")} />Back</LinkRouter></div>
-      <div className="containerCards" key={city._id}>
-        <div className="cardUni">
-          <img src={city.imgUrl} alt="" />
-          <div className="infoCard">
-            <div className="namesCard">
-                <p>{city.name}</p>
-                <p>{city.country}</p>
-            </div>
-            <p>Description: {city.description}</p>
-          </div>
-        </div>
-      </div>
+        {itineraries.length > 0 ? <Itinerary itineraries={itineraries} /> : <h2>There are no itineraries</h2>}
     </main>
   );
 }

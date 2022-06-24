@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Index />}/>
         <Route path="/cities" element={<Cities/>} />
-        <Route path="/city/details/:id" element={<Detail />} />
+        <Route path="/itineraries/city/:id" element={<Detail />} />
       </Routes>
       <ScrollToUp />
       <Footer />

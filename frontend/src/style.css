@@ -127,6 +127,16 @@ header .navegation ul li:hover{
     background-color: transparent;
 }
 
+.buttonItinerary{
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
 .userImg{
     border-radius: 50%;
     width: 60px;
@@ -458,6 +468,110 @@ footer .social img:hover{
     padding: 1rem;
 }
 
+.containerItineraries{
+    display: flex;
+    padding: 3rem 1rem;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.itinerary{
+    display: flex;
+    min-width: 20rem;
+    max-width: 38rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #282828;
+    color: #fff;
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.itinerary .infoItinerary{
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.itinerary .hashtags{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.itinerary .activities{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 0rem;
+    visibility: hidden;
+}
+
+.itinerary .activities.active{
+    animation-name: expand;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes expand{
+    0%{
+        height: 0rem;
+        visibility: hidden;
+    }
+    100%{
+        height: 10rem;
+        visibility: visible;
+    }
+}
+
+
+.itinerary .hashtags p{
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: .9em;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+
+.itinerary .seeMore{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.itinerary .seeMore .itineraryFooter{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 50%;
+}
+
+.itinerary .seeMore .itineraryFooter p{
+    margin: 0;
+}
+
+.itinerary .seeMore .itineraryFooter.right{
+    justify-content: end;
+}
+
+.itinerary .seeMore .itineraryFooter.right img{
+    width: 3rem;
+    height: 3rem;
+    transform: rotate(180deg);
+}
+
+.itinerary .seeMore img{
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 
 @media (max-width: 767px){
     .containLetter, .containButton{
@@ -520,6 +634,7 @@ footer .social img:hover{
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
+        margin-top: 5rem;
         gap: 2rem;
     }
 
@@ -548,6 +663,10 @@ footer .social img:hover{
         width: 10% !important;
         opacity: 1;
     }
+
+    .carousel-item{
+        margin-bottom: 5rem;
+    }
     
     .carousel-inner{
         width: 100% !important;
@@ -568,6 +687,32 @@ footer .social img:hover{
     main .building img{
         width: 7rem;
     }
+
+
+
+    .itinerary{
+        padding: 1rem;
+    }
+    .itinerary .infoItinerary h2{
+        font-size: 1.2em;
+    }
+    .itinerary .hashtags{
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .itinerary .seeMore img{
+        width: 3rem;
+        height: 3rem;
+    }
+    .itinerary .seeMore .itineraryFooter.right img{
+        width: 2rem;
+        height: 2rem;
+    }
+    .itinerary .seeMore .itineraryFooter{
+        gap: .2rem;
+    }
+
 
 }
 

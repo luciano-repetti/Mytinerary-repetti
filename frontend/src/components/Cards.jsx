@@ -15,7 +15,7 @@ function Cards({filter}){
                         <img src={city.imgUrl} alt="" />
                     <div className="infoCard">
                         <p>{city.name}</p>
-                        <LinkRouter to={`/city/details/${city._id}`}>see more</LinkRouter>
+                        <LinkRouter to={`/itineraries/city/${city._id}`}>Itineraries</LinkRouter>
                     </div>
                 </div>
             )

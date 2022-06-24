@@ -6,11 +6,10 @@ const itinerarySchema = new mongoose.Schema({
         nameUser:{type:String, required: true},
         imgUser:{type:String, required: true}
     },
-    price:{type:Number, required: true},
+    price:{type:String, required: true},
     duration:{type:Number, requiered: true},
     hashtags:{type:Array, requiered: true},
-    likes:{type:Array, required: true},
-    activities:{type:Array, required:true},
+    likes:{type:Number, required: true},
     city: {type:mongoose.Types.ObjectId, ref:'cities'}
 });
 
