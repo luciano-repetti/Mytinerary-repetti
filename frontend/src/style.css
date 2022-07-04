@@ -41,11 +41,6 @@ html *{
     font-size: 1.1rem;
 }
 
-
-a:hover{
-    color: white !important;
-}
-
 .buttonToUp{
     position: fixed;
     z-index: 99;
@@ -570,6 +565,131 @@ footer .social img:hover{
     height: 4rem;
     object-fit: cover;
     border-radius: 50%;
+}
+
+/* -----credentials------ */
+
+.conatinerCredentials{
+    width: 100%;
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    padding-top: 5.5rem;
+}
+
+.conatinerCredentials .sign{
+    width: 25rem;
+    background: #0000007e;
+    color: #fff;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.conatinerCredentials input{
+    position: relative;
+    width: 100%;
+    padding: 8px;
+    background: #f5f5f54b;
+    color: aliceblue;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: none;
+    margin: 8px 0;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.conatinerCredentials input::placeholder{
+    color: aliceblue;
+    font-size: 1.15rem;
+}
+
+.conatinerCredentials input[type='submit'] {
+    background: #677eff;
+    color: #fff;
+    cursor: pointer;
+    margin: 15px 0px 15px 0px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.conatinerCredentials .sign p{
+    margin: 0;
+}
+
+.conatinerCredentials .password{
+    position: relative;
+}
+
+.conatinerCredentials .password i{
+    position: absolute;
+    right: 5px;
+    top: 7px;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 6px 6px;
+    font-size: 1.4rem;
+}
+
+.conatinerCredentials input[type='checkbox']{
+    width: auto;
+}
+
+.conatinerCredentials .checkedPass{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.conatinerCredentials .socialNetworks{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly; 
+}
+
+.conatinerCredentials .socialNetworks a{
+    display: flex;
+    gap: .5rem;
+    text-decoration: none;
+    color: white;
+}
+
+.conatinerCredentials .haveAccount{
+    margin-top: 1rem !important;
+    display: flex;
+    gap: .5rem;
+}
+
+.conatinerCredentials .haveAccount a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.messageSignUpTrue{
+    text-align: center;
+    background-color: rgba(17, 146, 17, 0.500);
+    border-radius: 16px;
+    padding: .5rem .3rem;
+    margin: 0 0 .7rem 0 !important;
+}
+
+.messageSignUpFalse{
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.466);
+    border-radius: 16px;
+    padding: .5rem .3rem;
+    margin: 0 0 .7rem 0 !important;
 }
 
 

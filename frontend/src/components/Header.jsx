@@ -6,9 +6,11 @@ import {Link as LinkRouter} from "react-router-dom"
 function Header() {
   const [menu, setMenu] = useState(false)
   const [arrow, setArrow] = useState(false)
+
+
   function handleToggleMenu(){
-    setMenu(!menu)
-    setArrow(!arrow)
+      setMenu(!menu)
+      setArrow(!arrow)
   }
 
   return (
@@ -24,14 +26,14 @@ function Header() {
           </nav>
         </div>
         <div className="user">
-          <button className="button" onClick={handleToggleMenu}>
+          <button className="button" id="buttonProfile" onClick={handleToggleMenu}>
             <img className="userImg" src={require("../img/user.png")} alt="" />
           </button>
           <div>
             <img id="arrow" className={arrow ? "arrow show" : "arrow"} src={require("../img/arrow.png")} alt="" />
           </div>
             <div id="menuProfile" className={menu ? "profile show" : "profile"}>
-              <a href="">Sign Up</a>
+              <LinkRouter to={'./credentials'}>Sign Up</LinkRouter>
               <a href="">Sign In</a>
             </div>
         </div>

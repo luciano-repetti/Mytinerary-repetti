@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import Cities from './pages/Cities'
 import ScrollToUp from './components/ScrollToUp'
 import Detail from './pages/Detail'
+import CredentialsPage from './pages/CredentialsPage'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Index />}/>
         <Route path="/cities" element={<Cities/>} />
         <Route path="/itineraries/city/:id" element={<Detail />} />
+        <Route path="/credentials" element={<CredentialsPage />} />
       </Routes>
       <ScrollToUp />
       <Footer />
