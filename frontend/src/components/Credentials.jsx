@@ -39,10 +39,9 @@ function Crediantls(){
             password: event.target[1].value,
             from: "Sign Up"
         }
-        console.log(loginUser)
 
         setInfoSignIn(await dispatch(userActions.userSignIn(loginUser)))
-        console.log(infoSignIn)
+
     }
 
     const SignUpSubmit = async (event) => {
@@ -69,10 +68,18 @@ function Crediantls(){
             setInfoSignUp(res)
         }
     }
-    
+
+    if(infoSignIn !== null){
+        if (infoSignIn.success) {
+            setTimeout(function () {
+            navigate("/", { replace: true });
+            }, 1500);
+        }
+    }
+        
     
     return(
-        <section className="mainIndex">
+        <main>
             <div className="conatinerCredentials">
                 <div className="sign">
                     {
@@ -129,7 +136,7 @@ function Crediantls(){
                     
                 </div>
             </div>
-        </section>
+        </main>
     )
 }
 

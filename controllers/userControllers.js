@@ -1,6 +1,8 @@
 const User = require('../models/user');
 const bcryptjs = require('bcryptjs')
 const crypto = require('crypto')
+const sendEmail = require('./sendEmail')
+const jwt = require('jsonwebtoken')
 
 const userControllers ={
 
@@ -21,8 +23,7 @@ const userControllers ={
                         message: "You have already completed this registration form. Please login."
                     })
                 }else{
-                    const passwordEncrypted = await bcryptjs.hashSync(password, 10)
-
+                    const passwordEncrypted = bcryptjs.hashSync(password, 10)
                     userExists.from.push(from)
                     userExists.password.push(passwordEncrypted)
                     userExists.verification = true
@@ -34,7 +35,7 @@ const userControllers ={
                     })
                 }
             }else{
-                const passwordEncrypted = await bcryptjs.hashSync(password, 10)
+                const passwordEncrypted = bcryptjs.hashSync(password, 10)
                 const newUser = await new User({
                     fullName: fullName,
                     mailPhone: mailPhone,
@@ -55,6 +56,7 @@ const userControllers ={
                     })
                 }else{
                     await newUser.save()
+                    await sendEmail(mailPhone, uniqueString)
                     res.json({
                         success: true,
                         from: "sign up",
@@ -68,7 +70,7 @@ const userControllers ={
             res.json({
                 success: false,
                 from: "server",
-                message: "Error in the server",
+                message: "Error in the server.",
                 console: console.log(error) 
             })
         }
@@ -95,10 +97,11 @@ const userControllers ={
                             from: userExists.from,
                             role: userExists.role
                         }
+                        const token = jwt.sign({...userDate}, process.env.SECRET_KEY)
                         res.json({
                             success: true,
                             from: from,
-                            response: {userDate},
+                            response: {token, userDate},
                             message: `Welcome back ${userDate.fullName}!!`
                         })
                     }else{
@@ -119,10 +122,11 @@ const userControllers ={
                             from: userExists.from,
                             role: userExists.role
                         }
+                        const token = jwt.sign({...userDate}, process.env.SECRET_KEY)
                         res.json({
                             success: true,
                             from: from,
-                            response: {userDate},
+                            response: {token, userDate},
                             message: `Welcome back ${userExists.fullName}!`
                         })
                     }else{
@@ -142,7 +146,35 @@ const userControllers ={
                 console: console.log(error)
             })
         }
-    }
+    },
+
+    verifyToken: (req, res) => {
+        console.log(req)
+        if (req.user){
+      
+          res.json({success:true,
+          response:{id:req.user.id, imgUrl:req.user.imgUrl, fullName:req.user.fullName, mailPhone:req.user.mailPhone,  from:"token"},
+          message: "Welcome back "+req.user.fullName})
+        }else {
+          res.json({success:false,
+          message: "Please login again"})
+        }
+      },
+
+    verifyMail: async (req, res) =>{
+        const {string} = req.params
+        const user = await User.findOne({uniqueString: string})
+        if(user){
+            user.verification = true
+            await user.save()
+            res.redirect("http://localhost:3000/")
+        }else{
+            res.json({
+                success: false,
+                message: `email has not been confirmed yet!`
+            })
+        }
+    },
 }
 
 module.exports = userControllers;

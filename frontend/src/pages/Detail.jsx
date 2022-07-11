@@ -9,11 +9,9 @@ import itinerariesActions from "../redux/actions/itinerariesActions";
 import Itinerary from "../components/Itinerary";
 
 function Detail() {
-  ScrollToTop()
+  // ScrollToTop()
   let { id } = useParams();
   const dispatch = useDispatch()
-
-  // const [city, setCity] = useState([]);
 
   useEffect(() => {
     dispatch(citiesActions.getOneCity(id))
@@ -23,16 +21,13 @@ function Detail() {
  
 
 
-  const city = useSelector(store => store.citiesReducer.city)
   const itineraries = useSelector(store => store.itinerariesReducer.itineraries)
-
-  console.log(itineraries)
 
 
   return (
     <main className="mainCities">
         <div className="linkBack"><LinkRouter to={'/cities'}><img src={require("../img/arrowBack.png")} />Back</LinkRouter></div>
-        {itineraries.length > 0 ? <Itinerary itineraries={itineraries} /> : <h2>There are no itineraries</h2>}
+        {itineraries.length > 0 ? <Itinerary itineraries={itineraries} idCity={id} /> : <h2>There are no itineraries</h2>}
     </main>
   );
 }

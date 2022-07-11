@@ -14,6 +14,7 @@ function Slider(props) {
 
   return (
     <div className="slider">
+      <h2>POPULATOR CITIES</h2>
       <Carousel activeIndex={index} onSelect={handleSelect}>
         {
           slider.map(carrousel =>{

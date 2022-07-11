@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from "react"
 import jwt_decode from 'jwt-decode'
 import {useDispatch} from 'react-redux'
+import {useNavigate} from 'react-router-dom'
 import userActions from "../redux/actions/userActions"
 
 export default function GoogleSignIn(){
 
     const [infoSignIn, setInfoSignIn] = useState(null)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     async function handdleCallBackResponse(response){
         let userObject = jwt_decode(response.credential)
@@ -17,6 +19,14 @@ export default function GoogleSignIn(){
             from: "google"
         }
         setInfoSignIn(await dispatch(userActions.userSignIn(loginUser)))
+    }
+
+    if(infoSignIn !== null){
+        if (infoSignIn.success) {
+            setTimeout(function () {
+            navigate("/", { replace: true });
+            }, 1500);
+        }
     }
 
     useEffect(() =>{
